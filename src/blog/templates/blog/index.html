@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Bricos d'Axel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f8ff;
+      color: #333;
+    }
+    header {
+      background-color: #1e90ff;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #87cefa;
+    }
+    nav a {
+      color: #fff;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+    nav a:hover {
+      background-color: #1e90ff;
+    }
+    .container {
+      padding: 20px;
+    }
+    .content {
+      display: none;
+    }
+    .content.active {
+      display: block;
+    }
+  </style>
+  <script>
+    function showContent(id) {
+      const contents = document.querySelectorAll('.content');
+      contents.forEach(content => content.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>Les Bricos d'Axel</h1>
+    <p>Bienvenue sur le site des bricolages et projets créatifs d'Axel !</p>
+  </header>
+
+  <nav>
+    <a href="#presentation" onclick="showContent('presentation')">Présentation</a>
+    <a href="#projets-en-cours" onclick="showContent('projets-en-cours')">Projets en cours</a>
+    <a href="#projets-finis" onclick="showContent('projets-finis')">Projets finis</a>
+    <a href="#contact" onclick="showContent('contact')">Contact</a>
+  </nav>
+
+  <div class="container">
+    <section id="presentation" class="content active">
+      <h2>Présentation</h2>
+      <p>Découvrez qui est Axel et son univers de bricolages et projets créatifs.</p>
+    </section>
+
+    <section id="projets-en-cours" class="content">
+      <h2>Projets en cours</h2>
+      <p>Voici les projets créatifs actuellement en cours. Revenez souvent pour des mises à jour !</p>
+    </section>
+
+    <section id="projets-finis" class="content">
+      <h2>Projets finis</h2>
+      <p>Découvrez tous les projets que Axel a terminés avec succès.</p>
+      <p>{{nom}}</p>
+      <p>{{dec}}</p>
+    </section>
+
+    <section id="contact" class="content">
+      <h2>Contact</h2>
+      <p>Pour contacter Axel, remplissez ce formulaire :</p>
+      <form>
+        <label for="name">Nom:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+  </div>
+
+</body>
+</html>
