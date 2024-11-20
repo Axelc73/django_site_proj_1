@@ -41,6 +41,25 @@
     .content.active {
       display: block;
     }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    tr:hover {
+        background-color: #f1f1f1;
+    }
   </style>
   <script>
     function showContent(id) {
@@ -78,8 +97,22 @@
     <section id="projets-finis" class="content">
       <h2>Projets finis</h2>
       <p>Découvrez tous les projets que Axel a terminés avec succès.</p>
-      <p>{{nom}}</p>
-      <p>{{dec}}</p>
+      <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{crea.nom}}</td>
+                <td>{{crea.description}}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
     </section>
 
     <section id="contact" class="content">

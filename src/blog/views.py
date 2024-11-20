@@ -1,6 +1,6 @@
 from django.shortcuts import render
+from .models import *
 
 def index(request):
-    nom = ""
-    dec = ""
-    return render(request, "blog/index.html",{"nom": nom, "dec": dec})
+    creations = Creation.objects.all()
+    return render(request, "blog/index.html",{"creations": creations})
