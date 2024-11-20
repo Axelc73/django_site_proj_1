@@ -105,12 +105,19 @@
             </tr>
         </thead>
         <tbody>
+            {% for crea in creations %}
             <tr>
-                <td>{{crea.nom}}</td>
-                <td>{{crea.description}}</td>
-                <td>{{crea.image.url}}</td>
-            </tr>
-            
+              <td>{{crea.nom}}</td>
+              <td>{{crea.description}}</td>
+              <td>
+                {% if crea.image %}
+                    <img src="{{ crea.image.url }}" alt="{{ crea.nom }}">
+                {% else %}
+                    Aucune image
+                {% endif %}
+            </td>
+          </tr>
+            {% endfor %}
         </tbody>
     </table>
 
