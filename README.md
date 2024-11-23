@@ -1,1 +1,1 @@
-"# django_site_proj_1" 
+# django_site_proj_1
